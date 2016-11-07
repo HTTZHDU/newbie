@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style/common.css">
+	<link rel="stylesheet" href="style/pageA.css">
+	<link rel="stylesheet" href="style/pageB.css">
+	<link rel="stylesheet" href="style/pageC.css">
+	<script src="../jquery-3.1.1.min.js"></script>
+	<!-- <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script> -->
+	<script type="text/javascript" src="http://img.mukewang.com/down/55ac9ea30001ace700000000.js"></script>
+	<!-- <script type="text/javascript" src="http://img.mukewang.com/down/566a38f000016f0900000000.js"></script> -->
+	<script type="text/javascript" src="javascript/observer.js"></script>
+	<!-- <script type="text/javascript" src="javascript/snow.js"></script> -->
+	<script type="text/javascript" src="javascript/pageC.js"></script>
+	<script type="text/javascript" src="javascript/pageB.js"></script>
+	<script type="text/javascript" src="javascript/pageA.js"></script>
+	<script type="text/javascript" src="javascript/christmas.js"></script>
+	<script type="text/javascript" src="javascript/carousel.js"></script>
+	
+
+</head>
+<body>
+	<section class="container">
+		<audio src="music/scene.mp3" autoplay=""></audio>
+<!-- 		第一幅画面 -->
+		<section class="page-a bg-adaptive">
+			<!-- 月亮 -->
+			<figure class="moon"></figure>
+			<!-- 圣诞树 -->
+			<figure class="tree"></figure>
+			<!-- 云 -->
+			<figure class="cloud"></figure>
+			<div class="chs-boy chs-boy-deer"></div>
+			<div class="window wood">
+				<div class="window-bg"></div>
+				<div class="window-content">
+					<div class="window-left"></div>
+					<div class="window-right"></div>
+				</div>
+			</div>
+		</section>
+		<!-- 第二幅画面 -->
+		<section class="page-b bg-adaptive">
+			<figure class="cat"></figure>
+			<figure class="girl"></figure>
+			<figure class="christmas-boy-head"></figure>
+			<figure class="christmas-boy boy-walk"></figure>
+			<!-- 旋转木马效果 -->
+			<div id="carousel">
+				<figure id="spinner"></figure>
+			</div>
+		</section>
+		<!-- 第三幅画面 -->
+		<section class="page-c bg-adaptive">
+			<!-- <img src="images/c/page-c-bg.png"> -->
+			<div class="window wood">
+				<div class="window-content" data-attr = "red">
+					<div class="window-scene-bg"></div>
+					<div class="window-close-bg"></div>
+					<div class="window-left hover"></div>
+					<div class="window-right hover"></div>
+				</div>
+			</div>
+			<canvas id="snowflake"></canvas>
+		</section>
+	</section>
+	<!-- <button id="scene">点击切换场景</button>
+	<button id="music-end">点击停止音乐播放</button>
+	<button id="music-play">点击播放循环音乐</button> -->
+	<!-- <button id="chs">点击运行雪橇动作</button> -->
+	<button>点击打开</button>
+	<script type="text/javascript">
+	//rem设置
+		var config={};
+		(function(doc ,win){
+				var docE1=document.documentElement,
+				resizeEvt = 'orientationchange' in window ?'orientationchange':'resize',
+				recalc = function(){
+					var clientWidth = docE1.clientWidth;
+					if(!clientWidth) return;
+					docE1.style.fontSize = 20*(clientWidth/320)+'px';
+					document.body.style.height = clientWidth*(900/1440)+"px"
+					config.clientWidth = clientWidth;
+					config.clientHeight = clientWidth*(900/1440);
+			};
+			win.addEventListener(resizeEvt,recalc,false);
+			doc.addEventListener('DOMContentLoaded',recalc,false);
+		})(document,window);
+	</script>
+</body>
+</html>
